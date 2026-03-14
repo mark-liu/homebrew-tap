@@ -5,21 +5,21 @@
 class WebguardMcp < Formula
   desc "Secure web fetching MCP server for LLM agents — local prompt injection scanning"
   homepage "https://github.com/mark-liu/webguard-mcp"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/webguard-mcp/releases/download/v0.2.0/webguard-mcp_0.2.0_darwin_amd64.tar.gz"
-      sha256 "d9f6334e1d9520f17733c7396b57445a16d5a028c8f00922ed34648b2fd82d52"
+      url "https://github.com/mark-liu/webguard-mcp/releases/download/v0.3.0/webguard-mcp_0.3.0_darwin_amd64.tar.gz"
+      sha256 "1262b4bf1ec7a58873cc884e42f56b1f3ec2da5ff4471bce662379f3c6d6c062"
 
       define_method(:install) do
         bin.install "webguard-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/webguard-mcp/releases/download/v0.2.0/webguard-mcp_0.2.0_darwin_arm64.tar.gz"
-      sha256 "51deb4811b50bbe112d2285ef235e384e36964720ead3ad96ad2eb60018bc35f"
+      url "https://github.com/mark-liu/webguard-mcp/releases/download/v0.3.0/webguard-mcp_0.3.0_darwin_arm64.tar.gz"
+      sha256 "e8b23e7365f16f010d5dc0077c5d394ff0fe45a7188e230bed5560fc090234be"
 
       define_method(:install) do
         bin.install "webguard-mcp"
@@ -29,15 +29,15 @@ class WebguardMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mark-liu/webguard-mcp/releases/download/v0.2.0/webguard-mcp_0.2.0_linux_amd64.tar.gz"
-      sha256 "530e09706027999cac1ee84adc169e11c2f2fa605c9d8cd2c5c006ef975a702e"
+      url "https://github.com/mark-liu/webguard-mcp/releases/download/v0.3.0/webguard-mcp_0.3.0_linux_amd64.tar.gz"
+      sha256 "173d5c8f0e20636a90bca2b24b826aa231bb38cda8ee8e509291d6217d2bf501"
       define_method(:install) do
         bin.install "webguard-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mark-liu/webguard-mcp/releases/download/v0.2.0/webguard-mcp_0.2.0_linux_arm64.tar.gz"
-      sha256 "f51c490cbf9be8984ca9dfc0019212aabecea39d29fa762af3ef1df6cf89bed9"
+      url "https://github.com/mark-liu/webguard-mcp/releases/download/v0.3.0/webguard-mcp_0.3.0_linux_arm64.tar.gz"
+      sha256 "c5cb12fce7f35add5d38343bba5ba9445218c6c185a30c0a496513fe366cf13f"
       define_method(:install) do
         bin.install "webguard-mcp"
       end
