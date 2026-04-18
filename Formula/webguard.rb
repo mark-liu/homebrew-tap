@@ -1,35 +1,35 @@
 class Webguard < Formula
   desc "Secure MCP server — scans web content for prompt injection before it enters LLM context"
   homepage "https://github.com/mark-liu/webguard"
-  version "0.1.2"
+  version "0.1.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.1.2/webguard-aarch64-apple-darwin.tar.xz"
-      sha256 "770700af0a35cdefe2fd2e8c2b5fa203eea89972fc675cfdbf345b558aa94581"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.1.3/webguard-aarch64-apple-darwin.tar.xz"
+      sha256 "1b46af94a4311bc09614d8f3465b65c8e80207cba6a8b41cd48e4bd6097c6c1f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.1.2/webguard-x86_64-apple-darwin.tar.xz"
-      sha256 "8a104b3e18ba7f853392d9a7ca0f78b62d7a33646a1154bd6e5c497b6943c778"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.1.3/webguard-x86_64-apple-darwin.tar.xz"
+      sha256 "45a45c6dd6d9a1ea3b9f442f268928e97197d8ef41814fbb76f18723e7446fb9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.1.2/webguard-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b3e33cc28dfc0fa92df57caeb63118a80a4c7798b84bcc1ca4c571e9c981656e"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.1.3/webguard-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c30824f99168bb1c8986e5ed4ea7bd428fabbdbc78e292aee186f7db836952bd"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.1.2/webguard-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ea67ef4e040df6ced1e75edef4ec00a2ac847bc4c49fa228d6406319ef6e9ad1"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.1.3/webguard-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "b6cc81be61eb6c308d6c43d4a8ee5504ae52fde77d6bedf832bae619f7c0a534"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -47,18 +47,10 @@ class Webguard < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "webguard"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "webguard"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "webguard"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "webguard"
-    end
+    bin.install "webguard" if OS.mac? && Hardware::CPU.arm?
+    bin.install "webguard" if OS.mac? && Hardware::CPU.intel?
+    bin.install "webguard" if OS.linux? && Hardware::CPU.arm?
+    bin.install "webguard" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
