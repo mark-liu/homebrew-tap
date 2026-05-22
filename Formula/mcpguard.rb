@@ -5,21 +5,21 @@
 class Mcpguard < Formula
   desc "MCP stdio proxy — prompt injection scanning and payload compression for LLM safety"
   homepage "https://github.com/mark-liu/mcpguard"
-  version "0.1.2"
+  version "0.1.0-go"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/mcpguard/releases/download/v0.1.2/mcpguard_0.1.2_darwin_amd64.tar.gz"
-      sha256 "e9b3d0b9b73e7ed48c4bc018f3da54f724e79006750e733f83ae4433b8675fc0"
+      url "https://github.com/mark-liu/mcpguard/releases/download/v0.1.0-go/mcpguard_0.1.0-go_darwin_amd64.tar.gz"
+      sha256 "c97f208db12c1c867688c353b0ec830a123d7cb501e3b82d4caa5be6f6d763cf"
 
       define_method(:install) do
         bin.install "mcpguard"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/mcpguard/releases/download/v0.1.2/mcpguard_0.1.2_darwin_arm64.tar.gz"
-      sha256 "8844f35bf6d09e088d76c722142d693ad45917dabd6fe839e9b6c229465fc24d"
+      url "https://github.com/mark-liu/mcpguard/releases/download/v0.1.0-go/mcpguard_0.1.0-go_darwin_arm64.tar.gz"
+      sha256 "acccf5675905ad0325a31f1909472cae4b31fcf6b1db98d6587bbf5557f068ad"
 
       define_method(:install) do
         bin.install "mcpguard"
@@ -29,15 +29,15 @@ class Mcpguard < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mark-liu/mcpguard/releases/download/v0.1.2/mcpguard_0.1.2_linux_amd64.tar.gz"
-      sha256 "c2b1e933ef6255947bfca973f36a0cad8c3da93977550b0c4a13edc8e2e58eab"
+      url "https://github.com/mark-liu/mcpguard/releases/download/v0.1.0-go/mcpguard_0.1.0-go_linux_amd64.tar.gz"
+      sha256 "1bf503ea5c14516a28602780626b5ca21c4de3f993669db42d9b7e0c369e4037"
       define_method(:install) do
         bin.install "mcpguard"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mark-liu/mcpguard/releases/download/v0.1.2/mcpguard_0.1.2_linux_arm64.tar.gz"
-      sha256 "863d30f3a1a00244000463fe75a046ef00bbd0b337b5d6a705157c42ab596fb0"
+      url "https://github.com/mark-liu/mcpguard/releases/download/v0.1.0-go/mcpguard_0.1.0-go_linux_arm64.tar.gz"
+      sha256 "58a6782e8dc5c173b36658605dcf79b53df8f9f1e5fafa0659069061c77740ad"
       define_method(:install) do
         bin.install "mcpguard"
       end
