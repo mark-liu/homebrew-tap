@@ -1,25 +1,25 @@
 class Mcpguard < Formula
   desc "Transparent MCP stdio proxy — scans tool results for prompt injection and compresses payloads before they reach the LLM"
   homepage "https://github.com/mark-liu/mcpguard"
-  version "0.3.0"
+  version "0.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/mcpguard/releases/download/v0.3.0/mcpguard-aarch64-apple-darwin.tar.xz"
-      sha256 "c025a19ad482fc0622d83f30bb9127e5e234e8fb2938f329d1aa65082c0005c4"
+      url "https://github.com/mark-liu/mcpguard/releases/download/v0.4.0/mcpguard-aarch64-apple-darwin.tar.xz"
+      sha256 "cc06bae1cffd1c02bb44c1d8da2ce816d7bfc8854def69fd67167e08983fe5a2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/mcpguard/releases/download/v0.3.0/mcpguard-x86_64-apple-darwin.tar.xz"
-      sha256 "eb218886e0b59d6a00195c0eeb47a1cf8cf50dabffbcc9a2817ece35517f0811"
+      url "https://github.com/mark-liu/mcpguard/releases/download/v0.4.0/mcpguard-x86_64-apple-darwin.tar.xz"
+      sha256 "7d76958685dceb1c258874fdd7b14d0807e0ead4f8f7d4f9584e4481efe0d5ce"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/mcpguard/releases/download/v0.3.0/mcpguard-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e06024e74f615689d8f6bcd995c27022d291cf737f139a46b16093cc4b2703c1"
+      url "https://github.com/mark-liu/mcpguard/releases/download/v0.4.0/mcpguard-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "f52c09ccb0586f13957dab758482e8dd1e608f9f39706d1978c5e8facb3744ec"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/mcpguard/releases/download/v0.3.0/mcpguard-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9ea5950b70120daf45e36f302a22ed19a697bd513d05eba26f92c3013c6f46c1"
+      url "https://github.com/mark-liu/mcpguard/releases/download/v0.4.0/mcpguard-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "eb92359326238535e71226d81bad69b76391ab146c739933c03dae46535f3fc0"
     end
   end
   license "MIT OR GPL-3.0"
