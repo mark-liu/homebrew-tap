@@ -1,35 +1,35 @@
 class Webguard < Formula
   desc "Secure MCP server — scans web content for prompt injection before it enters LLM context"
   homepage "https://github.com/mark-liu/webguard"
-  version "0.4.5"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.4.5/webguard-aarch64-apple-darwin.tar.xz"
-      sha256 "f4c43a127a6eb23101e6e50ef8988148c1477690678ba274d9ac634fdb6c030f"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.5.0/webguard-aarch64-apple-darwin.tar.xz"
+      sha256 "1f896ab064b4fa48f66fbf403c96aafd6ca5c512a06c88e6c4c1d412ab451d11"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.4.5/webguard-x86_64-apple-darwin.tar.xz"
-      sha256 "bc2d0b59376577ec4dd5f3c393b75e0f77c4b5398cd388f7e0095b8a02f68197"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.5.0/webguard-x86_64-apple-darwin.tar.xz"
+      sha256 "a5ad2437bc9f7414ce07904871e23c2fe9b6941d40a58fadad753ff2bc157e07"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.4.5/webguard-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b53e33cb06dda65d15c39bb101492adf5d1a87ab704bfca84b66b5a2492adb14"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.5.0/webguard-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "89087bc421f3db5ba4d3a2327b903571594d563c0c77231dd79dc76369cf2733"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.4.5/webguard-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8c889b476dfbd1102ddbae150434a4689bd4f2645de2c80af4f9b429ffb417d3"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.5.0/webguard-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d180b648c66fcb112fc18b185e3a15318229d6e6b3159ae6145770fd75ef683f"
     end
   end
   license "MIT OR GPL-3.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
