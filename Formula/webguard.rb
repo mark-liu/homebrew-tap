@@ -1,25 +1,25 @@
 class Webguard < Formula
   desc "Secure MCP server — scans web content for prompt injection before it enters LLM context"
   homepage "https://github.com/mark-liu/webguard"
-  version "0.5.5"
+  version "0.5.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.5.5/webguard-aarch64-apple-darwin.tar.xz"
-      sha256 "5ee19abc8c39e50e8329d8db06033408b6ba788f92dc86a4512ae283a9137b80"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.5.6/webguard-aarch64-apple-darwin.tar.xz"
+      sha256 "10da05a8c2f52de95d690a52a1d56f4cdd3a6da79d389234403486f3b6e30dcc"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.5.5/webguard-x86_64-apple-darwin.tar.xz"
-      sha256 "de0735a803fd18e832ac58fd4d1ec32c1ecc342264227a7ce07c8bf0d787a1f3"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.5.6/webguard-x86_64-apple-darwin.tar.xz"
+      sha256 "20059d94c9029a8cd7bcff4e1d0635f39350b6650a98a6946b9e945f1692712b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.5.5/webguard-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "6b4616ee66d310f066aa13eb5054bac12e0b7be6ff5ad98e4d8835a6c01a8b41"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.5.6/webguard-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8e7decf5d17835f8f66e1e296a97e771ff14e9047a7d2f4a2cb1ff91a87b3da7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mark-liu/webguard/releases/download/v0.5.5/webguard-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "dd53f3f48479f82f97d13e725e72b7dc52426be98d99c97398381927799326ca"
+      url "https://github.com/mark-liu/webguard/releases/download/v0.5.6/webguard-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "8e74dc3eec16d619acb2c55807487d8b28c9d90fa50261b956fb065fd3d21cd2"
     end
   end
   license "MIT OR GPL-3.0"
